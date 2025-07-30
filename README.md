@@ -1,4 +1,4 @@
-🚀 Ejemplo Intermedio del Patrón Proxy en Spring Boot
+🚀 Ejemplo del Patrón Proxy en Spring Boot
 🔍 ¿Qué es el patrón Proxy?
 
 🧱 El Proxy es un patrón estructural que actúa como un intermediario entre el cliente y el objeto real, permitiendo:
