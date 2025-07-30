@@ -1,24 +1,26 @@
 🚀 Ejemplo del Patrón Proxy en Spring Boot
+
 🔍 ¿Qué es el patrón Proxy?
 
 🧱 El Proxy es un patrón estructural que actúa como un intermediario entre el cliente y el objeto real, permitiendo:
 
 ✨ Controlar el acceso
+
 🛡️ Agregar seguridad
+
 🧾 Realizar logs y auditorías
+
 🔁 Manejar transacciones automáticamente
+
 🧠 ¿Cómo se implementa el Proxy en este proyecto?
-🧩 Funcionalidad	⚙️ Implementación	🤖 ¿Quién actúa como Proxy?
-🔐 Seguridad	@PreAuthorize("hasRole('ADMIN')")	Proxy de Spring Security que valida los roles antes de ejecutar.
-💳 Transacciones	@Transactional	Proxy de Spring Transaction que maneja commit/rollback automáticamente.
-📜 Auditoría (Logs)	@Aspect con @Around	Proxy de Spring AOP que intercepta el método para registrar actividad.
-🧼 Encapsulamiento	La clase de servicio está "limpia"	Todo lo hacen los proxies sin modificar el código original.
-✅ Explicación técnica del patrón Proxy en este ejemplo
-🧩 Aspecto	🛠️ Implementación	🕵️‍♂️ ¿Dónde está el proxy?
-🔐 Seguridad	@PreAuthorize("hasRole('ADMIN')")	Spring genera un proxy que verifica el rol antes de llamar al método.
-💳 Transacción	@Transactional	El proxy comienza, hace commit o rollback automáticamente.
-📜 Logs/Auditoría	@Aspect + @Around	Proxy AOP intercepta llamadas para registrar actividad.
-🧼 Código limpio	BancoServiceImpl	No contiene lógica de seguridad, logs ni transacciones explícitas.
+
+| 🧩 Aspecto        | 🛠️ Implementación                  | 🕵️‍♂️ ¿Dónde está el proxy?                                          |
+| ----------------- | ----------------------------------- | --------------------------------------------------------------------- |
+| 🔐 Seguridad      | `@PreAuthorize("hasRole('ADMIN')")` | Spring genera un proxy que verifica el rol antes de llamar al método. |
+| 💳 Transacción    | `@Transactional`                    | El proxy comienza, hace commit o rollback automáticamente.            |
+| 📜 Logs/Auditoría | `@Aspect` + `@Around`               | Proxy AOP intercepta llamadas para registrar actividad.               |
+| 🧼 Código limpio  | `BancoServiceImpl`                  | No contiene lógica de seguridad, logs ni transacciones explícitas.    |
+
 🛠️ ¿Cómo funciona internamente?
 
 Spring genera clases proxy dinámicamente en tiempo de ejecución:
